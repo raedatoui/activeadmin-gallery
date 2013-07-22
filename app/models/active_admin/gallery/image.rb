@@ -5,7 +5,7 @@ module ActiveAdmin::Gallery
     attr_accessible :alt, :title, :position
 
     image_accessor :image
-    attr_accessible :image, :retained_image, :image_url, :remove_image
+    # attr_accessible :image, :retained_image, :image_url, :remove_image
     validates :image, presence: true, unless: :remove_image
     validates_size_of :image, :maximum => 3.megabyte
     validates_property :format, of: :image, in: [:jpeg, :jpg, :png], case_sensitive: false
